@@ -1,0 +1,28 @@
+{% include 'components/wallet-modal.html.twig' %}
+
+<header class="header">
+    <div class="header__bottom">
+        <div class="container">
+            <nav class="navbar navbar-expand-xl align-items-center">
+                <a class="site-logo site-title" href="{{ path('index') }}">Token Royale</a>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu-toggle"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav main-menu ml-auto">
+                        <li><a href="{{ path('index') }}">Home</a></li>
+                        <li><a href="{{ path('whitepaper') }}">Whitepaper</a></li>
+                        <li><a href="/#about">About</a></li>
+                    </ul>
+                    <div class="nav-right">
+                        {% if app.request.attributes.get('_route') == 'battle' %}
+                            <a style="cursor: pointer" data-toggle="modal" data-target="#wallet">wallet</a>
+                        {% else %}
+                            <a href="{{ path('battle') }}">join battle</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div><!-- header__bottom end -->
+</header>

@@ -1,0 +1,78 @@
+<footer class="footer-section bg_img" data-background="{{ asset('build/images/elements/footer.png') }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="subscribe-area">
+                    <div class="obj"><img src="{{ asset('build/images/custom/subscribe.png') }}" alt="image"></div>
+                    <div class="subscribe-content">
+                        <h2 class="title">Find Out About News!</h2>
+                        <p>Subscribe to get updated on future game battles</p>
+                        <p></p>
+                        <form class="subscribe-form">
+                            <input type="email" name="subscribe_email" id="subscribe_email" placeholder="Enter Your Email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-top mb-none-50">
+            <div class="col-lg-3 col-sm-6 mb-50">
+                <div class="footer-widget">
+                    <h3 class="footer-widget__title">ABOUT</h3>
+                    <ul class="short-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="{{ path('battle') }}">Battle</a></li>
+                        <li><a href="#">How to buy</a></li>
+                    </ul>
+                </div><!-- footer-widget end -->
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-50">
+                <div class="footer-widget">
+                    <h3 class="footer-widget__title">COMMUNITY</h3>
+                    <ul class="short-links">
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">Reddit</a></li>
+                    </ul>
+                </div><!-- footer-widget end -->
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-50">
+                <div class="footer-widget">
+                    <h3 class="footer-widget__title">RESOURCES</h3>
+                    <ul class="short-links">
+                        <li><a href="#">Contract</a></li>
+                        <li><a href="{{path('whitepaper')}}">White Paper</a></li>
+                        <li><a href="#">Buy on PancakeSwap</a></li>
+                        <li><a href="#">Live chart</a></li>
+                    </ul>
+                </div><!-- footer-widget end -->
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-50">
+                <div class="footer-widget">
+                    <h3 class="footer-widget__title">LEGAL</h3>
+                    <ul class="short-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Cookie policy</a></li>
+                    </ul>
+                </div><!-- footer-widget end -->
+            </div>
+        </div><!-- footer-top end -->
+        <div class="row footer-bottom align-items-center">
+            <div class="col-lg-7 col-md-6 text-md-left text-center">
+                <p class="copy-right-text">Copyright © 2021. All Rights Reserved By <a href="{{ path('index') }}">Token Royale</a></p>
+            </div>
+            <div class="col-lg-5 col-md-6 mt-md-0 mt-3">
+                <ul class="social-links justify-content-md-end justify-content-center">
+                    <li><a href="#0"><i class="lab la-facebook-f"></i></a></li>
+                    <li><a href="#0"><i class="lab la-twitter"></i></a></li>
+                    <li><a href="#0"><i class="lab la-pinterest-p"></i></a></li>
+                    <li><a href="#0"><i class="lab la-google-plus"></i></a></li>
+                    <li><a href="#0"><i class="lab la-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

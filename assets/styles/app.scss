@@ -1,0 +1,229 @@
+$black: #34435E;
+$white: #ffffff;
+
+body {
+    background-color: lightgray;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.track-record {
+    padding-bottom: 250px;
+    padding-top: 50px;
+}
+
+.join-team.cmn-btn,
+.surrender-team.cmn-btn {
+    padding: 7px 0px;
+    min-width: 135px;
+    margin-bottom: 5px;
+}
+
+/*.join-team.cmn-btn span {*/
+/*    font-size: 12px*/
+/*}*/
+
+.battle-icon {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.custom-chart {
+    display: flex;
+    width: 100%;
+}
+
+.current-battle.section-header.has--bg .header-image {
+    justify-content: initial;
+}
+
+.current-battle.section-header {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul#current-battle-remaining li span {
+    font-size: 35px;
+    line-height: 50px;
+}
+
+ul#current-battle-remaining li.seperator {
+    font-size: 35px;
+    line-height: 50px;
+}
+
+ul#current-battle-remaining li p {
+    font-size: 16px;
+}
+
+h3.game-card__title {
+    font-size:20px
+}
+
+.team-alpha-card-template-rendered .game-card__info .thumb img,
+.team-beta-card-template-rendered .game-card__info .thumb img {
+    height: 70px;
+}
+
+.team-alpha-card-template-rendered .game-card__info .thumb,
+.team-beta-card-template-rendered .game-card__info .thumb {
+    width: 70px;
+    height: 70px;
+}
+
+.team-alpha-card-template-rendered .game-card__content,
+.team-beta-card-template-rendered .game-card__content {
+    padding: 15px;
+}
+
+.account-form .form-control {
+    color: #000;
+}
+
+.team-card__thumb img {
+    border-radius: 50%;
+}
+
+/** Timeline **/
+
+#roadmap {
+    main {
+        min-width: 300px;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    p {
+        font-size: 1em;
+        line-height: 1.75em;
+        border-top: 3px solid;
+        border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+        border-image-slice: 1;
+        border-width: 3px;
+        margin: 0;
+        padding: 40px;
+        counter-increment: section;
+        position: relative;
+        color: $white;
+
+
+        &:before {
+            content: "Q" counter(section);
+            position: absolute;
+            border-radius: 50%;
+            padding: 10px;
+            height: 3em;
+            width: 3em;
+            background-color: #34435E;
+            text-align: center;
+            line-height: 2.2em;
+            color: #ffffff;
+            font-size: 1em;
+        }
+    }
+
+    p:nth-child(odd) {
+        border-right: 3px solid;
+        padding-left: 0;
+
+        &:before {
+            left: 100%;
+            margin-left: -20px;
+        }
+    }
+
+    p:nth-child(even) {
+        border-left: 3px solid;
+        padding-right: 0;
+
+        &:before {
+            right: 100%;
+            margin-right: -20px;
+        }
+    }
+    p:first-child {
+        border-top: 0;
+        border-top-right-radius:0;
+        border-top-left-radius:0;
+    }
+    p:last-child {
+        border-bottom-right-radius:0;
+        border-bottom-left-radius:0;
+    }
+}
+
+.battle-charts {
+    .overview-card {
+        height: 100%;
+
+        .overview-card__icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .overview-card__content {
+            width: calc(100% - 60px);
+
+            .chart-label {
+                font-size: 14px;
+            }
+
+            .overview-card__number {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+//.winner-frame {
+//    background: url("../images/elements/theme-objects/winner.png");
+//    background-size: cover;
+//    background-position: 100%;
+//    padding: 40px 0 35px;
+//}
+
+.historical-battles {
+    .winner-frame {
+        .frame-container {
+            width: 205px;
+            z-index: 20;
+            .frame {
+                width: 100%
+            }
+        }
+
+        .team-container {
+            position: absolute;
+            top: 92px;
+            left: 145px;
+            z-index: -1;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .team-name {
+            margin-top: -25px;
+        }
+    }
+
+    .battle-team {
+        width: 110px;
+        padding: 20px;
+
+        img {
+            width: 100%
+        }
+    }
+
+    .battle-stats {
+        .battle-stat {
+            padding: 10px;
+        }
+    }
+
+    .more-info {
+        padding: 0 10px;
+    }
+}

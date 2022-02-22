@@ -1,0 +1,138 @@
+<script id="battle-inprogress-template" type="text/x-handlebars-template">
+    <div class="row mb-3 align-items-center">
+        <div class="col-lg-6">
+            <div class="current-battle section-header has--bg">
+                <div class="header-image"><img src="build/images/elements/header-el.png"" alt="image"></div>
+                <h2 class="section-title">Current battle</h2>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="overview-card">
+                <div class="overview-card__icon">
+                    <img src="build/images/elements/icons/stopwatch.svg" />
+                </div>
+                <div class="overview-card__content">
+                    {% verbatim %}
+                        <ul id="current-battle-remaining" data-end-date="{{ battle_end }}" class="m-0">
+                            <li><span class="days">00</span><p class="days_text">Days</p></li>
+                            <li class="seperator">:</li>
+                            <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
+                            <li class="seperator">:</li>
+                            <li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
+                            <li class="seperator">:</li>
+                            <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
+                        </ul>
+                    {% endverbatim %}
+                </div>
+            </div><!-- overview-card end -->
+        </div>
+    </div><!-- row end -->
+    <div class="row mb-none-40 account-form">
+        {% verbatim %}
+            {{#each teams}}
+                <div class="col-lg-6 mb-40">
+                    <div class="game-card">
+                        <div class="game-card__thumb">
+                            <img src="{{ cover_path }}" alt="image">
+                        </div>
+                        <div class="game-card__content">
+                            <div class="game-card__details">
+                                <div class="game-card__info">
+                                    <div class="thumb"><img src="{{ badge_path }}" alt="image"></div>
+                                    <div class="content">
+                                        <h3 class="game-card__title">{{ this.name }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card__action">
+                                <a data-dismiss="modal" data-toggle="modal" data-target="#join_team_{{ this.team_index }}" class="join-team cmn-btn cursor">
+                                    <img class="battle-icon" src="build/images/elements/icons/join-battle.svg"> <span class="">join battle</span>
+                                </a>
+                                <a data-dismiss="modal" data-toggle="modal" data-target="#surrender_team_{{ this.team_index }}" class="surrender-team cmn-btn cursor">
+                                    <img class="battle-icon" src="build/images/elements/icons/surrender.svg"> <span class="">I surrender!</span>
+                                </a>
+                            </div>
+                        </div><!-- game-card__content end -->
+                        <div class="modal fade" id="join_team_{{ this.team_index }}" tabindex="1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content bg-transparent">
+                                    <div class="modal-body">
+                                        <div class="account-area">
+                                            <h3 data-joined="{{this.is_joined}}" class="title mb-4">Join to {{ this.name }}</h3>
+                                            {{#if this.allowed}}
+                                                <div class="account-form">
+                                                    <div class="form-group">
+                                                        <label>Set RYL amount </label>
+                                                        <input type="number" name="team_{{ this.team_index }}" class="amount form-control">
+                                                    </div>
+                                                    <div class="text-center">
+                                                        <button class="cmn-btn join-battle" data-team-index="{{ this.team_index }}">For the {{ this.name }}!</button>
+                                                    </div>
+                                                </div>
+                                            {{else}}
+                                                You cannot join on this team, because you already joined to other
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="surrender_team_{{ this.team_index }}" tabindex="1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content bg-transparent">
+                                    <div class="modal-body">
+                                        <div class="account-area">
+                                            <h3 data-joined="{{this.is_joined}}" class="title mb-4">Surrender from {{ this.name }}</h3>
+                                            {{#if this.is_joined}}
+                                                <div class="account-form">
+                                                    <h2>Are you sure?</h2>
+                                                    <div class="text-center">
+                                                        <button class="cmn-btn surrender-battle" data-team-index="{{ this.team_index }}">I surrender!</button>
+                                                    </div>
+                                                </div>
+                                            {{else}}
+                                                You cannot surrender form this team!
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- game-card end -->
+                </div>
+            {{/each}}
+        {% endverbatim %}
+    </div>
+    <div class="row mt-80">
+        <div class="col-lg-12">
+            <div class="current-battle section-header has--bg">
+                <div class="header-image"><img src="build/images/elements/header-el.png" alt="image"></div>
+                <h2 class="section-title">Battle destiny</h2>
+            </div>
+        </div>
+        <div class="col-lg-12 mb-none-30">
+            <div class="row justify-content-center battle-charts">
+                {% verbatim %}
+                    {{#each canvas_charts}}
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="overview-card h-100">
+                                <canvas id="{{ this }}"></canvas>
+                            </div><!-- overview-card end -->
+                        </div>
+                    {{/each}}
+                    {{#each custom_charts}}
+                        <div id="{{ this }}" class="col-lg-3 col-md-6 mb-30">
+                            <div class="overview-card">
+                                <div class="overview-card__icon chart-icon"></div>
+                                <div class="overview-card__content">
+                                    <h4 class="overview-card__number chart-value"></h4>
+                                    <p class="chart-label"></p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                {% endverbatim %}
+            </div>
+        </div>
+    </div>
+</script>

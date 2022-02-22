@@ -1,0 +1,14 @@
+<div class="modal fade" id="wallet" tabindex="1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-transparent">
+            <div class="modal-body">
+                <div class="account-area">
+                    {# will be handled by CORE TS App and rendered by handlebars #}
+                    {{ include('handlebars/wallet_connected.html.twig') }}
+                    {{ include('handlebars/wallet_disconnected.html.twig') }}
+                    <div class="wallet-connected-template-rendered wallet-disconnected-template-rendered"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

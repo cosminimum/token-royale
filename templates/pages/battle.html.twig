@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="mt-50 pt-120 pb-120 overflow-hidden">
+        <div class="about-obj-1" data-paroller-factor="-0.08" data-paroller-type="foreground" data-paroller-direction="horizontal"><img src="{{ asset('build/images/elements/about-obj-1.png') }}" alt="image"></div>
+        <div class="about-obj-2" data-paroller-factor="0.08" data-paroller-type="foreground" data-paroller-direction="horizontal"><img src="{{ asset('build/images/elements/about-obj-2.png') }}" alt="image"></div>
+
+        <div class="container">
+            <div class="battle-waiting-section">
+                {% include "handlebars/battle_waiting_template.html.twig" %}
+            </div>
+            <div class="battle-inprogress-section">
+                {% include "handlebars/battle_inprogress_template.html.twig" %}
+            </div>
+            <div class="battle-waiting-template-rendered battle-inprogress-template-rendered"></div>
+        </div>
+    </section>
+    <section id="battle-history" class="position-relative overflow-hidden mt-5">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="current-battle section-header has--bg">
+                    <div class="header-image"><img src="{{ asset("build/images/elements/header-el.png") }}" alt="image"></div>
+                    <h2 class="section-title">Battles in history</h2>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                {% include 'handlebars/historical_battles_template.html.twig' %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('app-battle') }}
+{% endblock %}

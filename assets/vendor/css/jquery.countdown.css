@@ -1,0 +1,24 @@
+ul#current-battle-remaining {
+	list-style: none;
+	margin: 50px 0;
+	padding: 0;
+	display: block;
+	text-align: center;
+}
+ul#current-battle-remaining li {
+	display: inline-block;
+}
+ul#current-battle-remaining li span {
+	font-size: 80px;
+	font-weight: 300;
+	line-height: 80px;
+}
+ul#current-battle-remaining li.seperator {
+	font-size: 80px;
+	line-height: 70px;
+	vertical-align: top;
+}
+ul#current-battle-remaining li p {
+	color: #a7abb1;
+	font-size: 25px;
+}

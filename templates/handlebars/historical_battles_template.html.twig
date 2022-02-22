@@ -1,0 +1,48 @@
+<script id="historical-battles-template" type="text/x-handlebars-template">
+    <div class="row historical-battles">
+        {% verbatim %}
+            {{#each battles}}
+                <div class="col-12 col-sm-4">
+                    <div class="overview-card justify-content-center">
+                       <div class="winner-frame">
+                            <div class="frame-container">
+                                <img class="frame" src="build/images/elements/theme-objects/winner.png" />
+                            </div>
+                            <div class="team-container">
+                                <img class="team" src="{{ this.results.winner.BADGE_PATH }}" alt="logo" class="avatar-xl rounded-circle mb-3">
+                            </div>
+                            <h4 class="team-name">{{ this.results.winner.TEAM_NAME }}</h4>
+                       </div>
+                       <div class="battle-more-info d-flex w-100 justify-content-center">
+                            <div class="more-info" data-toggle="tooltip" data-placement="bottom" title="{{ this.start }} - {{this.end}}" class="duration"><i class="fa fa-calendar-alt text-white"></i></div>
+                            <div class="more-info" data-toggle="tooltip" data-placement="bottom" title="{{ this.salt }}" class="salt"><i class="fa fa-user-secret text-white"></i></div>
+                        </div>
+
+                       <div class="battle-teams d-flex">
+                            <div class="battle-alpha battle-team">
+                                <img data-toggle="tooltip" data-placement="bottom" title="{{ this.team_alpha.TEAM_NAME }}" class="rounded-circle" src="{{ this.team_alpha.BADGE_PATH }}" />
+                            </div>
+                            <div class="battle-versus d-flex align-content-center">
+                                <img class="battle-icon" src="build/images/elements/icons/join-battle.svg">
+                            </div>
+                            <div class="battle-beta battle-team">
+                                <img data-toggle="tooltip" data-placement="bottom" title="{{ this.team_beta.TEAM_NAME }}" class="rounded-circle" src="{{ this.team_beta.BADGE_PATH }}" />
+                            </div>
+                       </div>
+                       <div class="battle-stats d-flex text-center">
+                            <div class="battle-holders battle-stat">
+                                <p class="stat-title">Total Holders</p>
+                                <h4 class="stat-value">{{ this.results.total_holders }}</h4>
+                            </div>
+                            <div class="battle-tokens battle-stat">
+                                <p class="stat-title">Total Tokens</p>
+                                <h4 class="stat-value">{{ this.results.total_holders }}k</h4>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+            {{/each}}
+        {% endverbatim %}
+    </div>
+</script>
+<div class="historical-battles-template-rendered"></div>
