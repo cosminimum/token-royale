@@ -1,29 +1,12 @@
-# README #
+# TokenRoyale - DeFi Gamified platform for BSC Token
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Pet project for DeFi Blockchain world.
+This app it's used to communicate with BSC Blockchain and it has as main scope to host a game battle between two factions.
 
-### What is this repository for? ###
+# Technologies
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+- Docker
+- Symfony 5 w PHP 8.0
+- NoSQL: Redis
+- Typescript
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact# token-royale
